@@ -1,17 +1,20 @@
 {
   "name": "My Telegram Bot",
-  "description": "A simple Telegram bot to report channels.",
+  "description": "A bot that allows users to report channels.",
   "keywords": ["telegram", "bot", "report"],
+  "repository": "https://github.com/Devu7508Random/Reportbot",
   "env": {
     "API_TOKEN": {
       "description": "Your Telegram Bot API Token",
       "required": true
     }
   },
-  "buildpacks": [{
-    "url": "heroku/python"
-  }],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
   "scripts": {
-    "postdeploy": "heroku config:set YOUR_API_TOKEN=$API_TOKEN"
+    "postdeploy": "python simple_bot.py"
   }
 }
